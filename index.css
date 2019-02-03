@@ -26,9 +26,35 @@ img{
 
 /*Projects*/
 #projects{
-  width: 100%;
   margin-top: 5%;
-  padding-left: 1em;
+  background-color: #0C090A;
+}
+#poem, #voter, #type, #pCard{
+  padding: 1em;
+  /*border: solid gray 0.5px;*/
+}
+.projImg{
+  height: 35vh;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.projTitle{
+  position: absolute;
+  background-color: black;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  transition: 0.5s;
+  opacity: 0;
+  font-size: 1em;
+  padding: 1em;
+  text-align: center;
+  float: right;
+}
+#poem:hover .projTitle, #voter:hover .projTitle, #type:hover .projTitle, #pCard:hover .projTitle{
+  opacity: 1;
 }
 
 
