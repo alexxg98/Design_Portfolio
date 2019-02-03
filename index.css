@@ -1,0 +1,45 @@
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #E77471 !important;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+/*Heading*/
+#heading{
+  padding: 1em;
+}
+#logoImage{
+  width: 3vw;
+  height: auto;
+  float: left;
+}
+#name{
+  float: left;
+  color: white;
+  font-family: cursive;
+}
+
+/*Projects*/
+#projects{
+  width: 100%;
+  margin-top: 5%;
+  padding-left: 1em;
+}
+
+
+#crBar{
+  margin-top: 2em;
+  position: fixed;
+  bottom: 0;
+  background-color:black;
+  width:100%;
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+  font-family: palatino;
+}
