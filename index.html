@@ -1,296 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <!-- ========== Meta Tags ========== -->
-    <meta charset="UTF-8">
-    <meta name="description" content="Cocoon -Portfolio">
-    <meta name="keywords" content="Cocoon , Portfolio">
-    <meta name="author" content="Pharaohlab">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- ========== Title ========== -->
-    <title> Alexandria's Portfolio </title>
-    <!-- ========== Favicon Ico ========== -->
-    <!--<link rel="icon" href="fav.ico">-->
-    <!-- ========== STYLESHEETS ========== -->
-    <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Fonts Icon CSS -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/et-line.css" rel="stylesheet">
-    <link href="assets/css/ionicons.min.css" rel="stylesheet">
-    <!-- Carousel CSS -->
-    <link href="assets/css/slick.css" rel="stylesheet">
-    <!-- Magnific-popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Alexandria's Portfolio </title>
+<link href="assets/css/index.css" type="text/css" rel="stylesheet">
+<<!-- Bootstrap and JavaScript -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="loader">
-    <div class="loader-outter"></div>
-    <div class="loader-inner"></div>
-</div>
 
-<div class="body-container container-fluid">
-    <a class="menu-btn" href="javascript:void(0)">
-        <i class="ion ion-grid"></i>
-    </a>
-    <div class="row justify-content-center">
-        <!--=================== side menu ====================-->
-        <div class="col-lg-2 col-md-3 col-12 menu_block">
+<div class="sidenav">
+  <div class="index.html">
+      <a href="#">
+        <center> <img src="assets/images/logo_transp.png" id="logo"> </center>
+      </a>
+  </div>
 
-            <!--logo -->
-            <div class="logo_box">
-                <a href="#">
-                    <img src="images/logo_transp.png" id="logo">
-                </a>
-            </div>
-            <!--logo end-->
+  <div class="sidenav_section">
+    <a href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-            <!--main menu -->
-            <div class="side_menu_section">
-                <ul class="menu_nav">
-                    <li class="active">
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-                    <!-- <li>
-                        <a href="about.html">
-                            About Me
-                        </a>
-                    </li> -->
-                    <li>
-                        <a href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!--main menu end -->
+  <div class="sidenav_section">
+    <p style="color: white; margin-bottom: 10px;">Filter By:</p>
 
-            <!--filter menu -->
-            <div class="side_menu_section">
-                <h4 class="side_title">filter by:</h4>
-                <ul  id="filtr-container"  class="filter_nav">
-                    <li  data-filter="*" class="active"><a href="javascript:void(0)" >all</a></li>
-                    <li data-filter=".typography"> <a href="javascript:void(0)">Typography</a></li>
-                    <li data-filter=".design"><a href="javascript:void(0)">design</a></li>
-                    <li data-filter=".photography"><a href="javascript:void(0)">photography</a></li>
-                    <li data-filter=".architecture"><a href="javascript:void(0)">architecture</a></li>
-                </ul>
-            </div>
-            <!--filter menu end -->
-
-            <!--social and copyright -->
-            <div class="side_menu_bottom">
-                <div class="side_menu_bottom_inner">
-                    <div class="copy_right">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
-            <!--social and copyright end -->
-
-        </div>
-        <!--=================== side menu end====================-->
-
-        <!--=================== content body ====================-->
-        <div class="col-lg-10 col-md-9 col-12 body_block  align-content-center">
-            <div class="portfolio">
-                <div class="container-fluid">
-                    <!--=================== masaonry portfolio start====================-->
-                    <div class="grid img-container justify-content-center no-gutters">
-                        <div class="grid-sizer col-sm-12 col-md-6 col-lg-3"></div>
-                        <div class="grid-item typography  col-sm-12 col-md-6">
-                            <a href="images/poem1.jpg" title="Concrete Poem 1">
-                                <div class="project_box_one">
-                                    <img src="images/poem1.jpg" alt="Concrete Poem 1" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Concrete Poem 1</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item  typography  col-sm-12 col-md-6 col-lg-3">
-                            <a href="images/poem2.jpg" title="Concrete Poem 2">
-                                <div class="project_box_one">
-                                    <img src="images/poem2.jpg" alt="Concrete Poem 2" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Concrete Poem 2</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item typography col-sm-12 col-md-6 col-lg-3">
-                            <a href="images/poem3.jpg" title="Concrete Poem 3">
-                                <div class="project_box_one">
-                                    <img src="images/poem3.jpg" alt="Concrete Poem 3" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Concrete Poem 3</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item typography col-sm-12 col-md-6 col-lg-3">
-                            <a href="images/voterRegistrationF.jpg" title="voterReg">
-                                <div class="project_box_one">
-                                    <img src="images/voterRegistrationF.jpg" alt="voterReg" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Voter Registration Form</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item typography col-sm-12 col-md-6 col-lg-3">
-                            <a href="images/voterRegistrationB.jpg" title="voterReg">
-                                <div class="project_box_one">
-                                    <img src="images/voterRegistrationB.jpg" alt="voterReg" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Voter Registration Form</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item  typography  col-sm-12 col-md-6">
-                            <a href="images/type.jpg" title="Alria">
-                                <div class="project_box_one">
-                                    <img src="images/type.jpg" alt="Alria" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Alria Typeface Design</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item design col-sm-12 col-md-6 col-lg-3">
-                            <a href="images/playingCardA.jpg" title="Playing Card Design 1">
-                                <div class="project_box_one">
-                                    <img src="images/playingCardA.jpg" alt="Playing Card Design 1" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Playing Card Design 1</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="grid-item design col-sm-12 col-md-6 col-lg-3">
-                            <a href="images/playingCardS.jpg" title="Playing Card Design 2">
-                                <div class="project_box_one">
-                                    <img src="images/playingCardS.jpg" alt="Playing Card Design 2" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>Playing Card Design 2</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="grid-item  branding design  col-sm-12 col-md-6 col-lg-3">
-                            <a href="#" title="project name 5">
-                                <div class="project_box_one">
-                                    <img src="#" alt="pro1" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>project name</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="grid-item architecture  col-sm-12 col-md-6 col-lg-6">
-                            <a href="#" title="project name 4">
-                                <div class="project_box_one">
-                                    <img src="#" alt="pro1" />
-                                    <div class="product_info">
-                                        <div class="product_info_text">
-                                            <div class="product_info_text_inner">
-                                                <i class="ion ion-plus"></i>
-                                                <h4>project name</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--=================== masaonry portfolio end====================-->
-                </div>
-            </div>
-        </div>
-        <!--=================== content body end ====================-->
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">Show all</button>
+      <button class="btn" onclick="filterSelection('typography')">Typography</button>
+      <button class="btn" onclick="filterSelection('illustration')">Illustration</button>
     </div>
+  </div>
 </div>
 
 
-<!-- jquery -->
-<script src="assets/js/jquery.min.js"></script>
-<!-- bootstrap -->
-<script src="assets/js/popper.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/waypoints.min.js"></script>
-<!--slick carousel -->
-<script src="assets/js/slick.min.js"></script>
-<!--Portfolio Filter-->
-<script src="assets/js/imgloaded.js"></script>
-<script src="assets/js/isotope.js"></script>
-<!-- Magnific-popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<!--Counter-->
-<script src="assets/js/jquery.counterup.min.js"></script>
-<!-- WOW JS -->
-<script src="assets/js/wow.min.js"></script>
-<!-- Custom js -->
-<script src="assets/js/main.js"></script>
+
+
+<div class="main">
+
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <!-- Column 1 -->
+      <div class="col-lg-6">
+        <div class="row no-gutters">
+          <div class="col-12 filterDiv typography">
+            <img src="assets/images/poem1.jpg" alt="Concrete Poem 1" />
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-6 filterDiv typography">
+            <img src="assets/images/voterRegistrationF.jpg" alt="voterReg" />
+          </div>
+          <div class="col-6 filterDiv typography">
+            <img src="assets/images/voterRegistrationB.jpg" alt="voterReg" />
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-12 filterDiv illustration">
+            <img src="assets/images/moviePosterTransformation.jpg" alt="Movie Poster Transformation" />
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-6 filterDiv illustration">
+            <img src="assets/images/portraits.jpg" alt="Malala Yousafzai Portrait" />
+          </div>
+          <div class="col-6 filterDiv illustration">
+            <img src="assets/images/famousViews_1.jpg" alt="Famous Views - Take a Walk Through the Pier" />
+          </div>
+        </div>
+      </div> <!-- End of Column 1 -->
+
+      <!-- Column 2 -->
+      <div class="col-lg-6">
+        <div class="row no-gutters">
+          <div class="col-6 filterDiv typography">
+            <img src="assets/images/poem2.jpg" alt="Concrete Poem 2" />
+          </div>
+          <div class="col-6 filterDiv typography">
+            <img src="assets/images/poem3.jpg" alt="Concrete Poem 3" />
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-12 filterDiv typography">
+            <img src="assets/images/type.jpg" alt="Alria" />
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-6 filterDiv illustration">
+            <img src="assets/images/playingCardA.jpg" alt="Playing Card Design 1" />
+          </div>
+          <div class="col-6 filterDiv illustration">
+            <img src="assets/images/playingCardS.jpg" alt="Playing Card Design 2" />
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-12 filterDiv illustration">
+            <img src="assets/images/surrealPortrait.jpg" alt="Surreal Portrait" />
+          </div>
+        </div>
+      </div> <!-- End of Column 2 -->
+    </div> <!--End of grid -->
+  </div> <!--End of container -->
+
+</div> <!--End of main body -->
+
+
+
+
+
+<script src="assets/js/index.js"> </script>
 </body>
 </html>
