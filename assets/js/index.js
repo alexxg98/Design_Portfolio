@@ -4,12 +4,12 @@ function filterSelection(c) {
   x = document.getElementsByClassName("filterDiv");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    removeClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
   }
 }
 
-function w3AddClass(element, name) {
+function addClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -18,7 +18,7 @@ function w3AddClass(element, name) {
   }
 }
 
-function w3RemoveClass(element, name) {
+function removeClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -46,7 +46,7 @@ for (var i = 0; i < btns.length; i++) {
 var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("poem");
+// var img = document.getElementById("poem");
 var modalImg = document.getElementById("img01");
 // var captionText = document.getElementById("caption");
 
@@ -56,32 +56,10 @@ function onClick(element) {
   // captionText.innerHTML = this.alt;
 }
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks outside of the image, close the modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-  if (event.target == document.getElementById("myModal_carousel")) {
-    document.getElementById("myModal_carousel").style.display = "none";
-    document.getElementById("myModal_carousel").style.display = "none";
-  }
-}
-
-
-// Open the Modal
+// Open the Modal Carousel
+var modal_carousel = document.getElementById("myModal_carousel");
 function openModal() {
-  document.getElementById("myModal_carousel").style.display = "block";
-}
-
-// Close the Modal
-function closeModal() {
-  document.getElementById("myModal_carousel").style.display = "none";
+  modal_carousel.style.display = "block";
 }
 
 var slideIndex = 1;
@@ -100,13 +78,27 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("imgSlides");
-
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-
   slides[slideIndex-1].style.display = "block";
+}
 
+
+// Close the Modal using button
+function closeModal() {
+  modal_carousel.style.display = "none";
+  modal.style.display = "none";
+}
+
+// CLose the Modal when user clicks outside image
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+  if (event.target == modal_carousel) {
+    modal_carousel.style.display = "none";
+  }
 }
