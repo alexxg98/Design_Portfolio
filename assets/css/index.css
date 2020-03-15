@@ -8,6 +8,14 @@ body {
   margin-bottom: 20px;
 }
 
+#backBtn{
+  font-size: 0.8em;
+}
+#backBtn:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .sidenav {
   height: 100%;
   width: 160px;

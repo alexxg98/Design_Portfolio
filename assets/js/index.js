@@ -1,3 +1,9 @@
+//Go back to Main Portfolio Page
+function goBack() {
+  window.history.back();
+  // window.location.href="https://alexxg98.github.io/";
+}
+
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
