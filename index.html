@@ -51,6 +51,7 @@
         <div class="row no-gutters">
           <div class="col-12 filterDiv typography">
             <img id="modalImg" src="assets/images/poem1.jpg" alt="Concrete Poem 1" onclick="onClick(this)" />
+            <span class="overlay"> Concrete Poem | Dec 2018 </span>
           </div>
         </div>
         <div class="row no-gutters">
@@ -68,7 +69,7 @@
         </div>
         <div class="row no-gutters">
           <div class="col-6 filterDiv illustration">
-            <img id="modalImg" src="assets/images/famousViews_1.jpg" alt="Famous Views - Take a Walk Through the Pier" onclick="onClick(this)" />
+            <img id="modalImg" src="assets/images/famousViews_1.jpg" alt="Famous Views - Take a Walk Through the Pier" onclick="openModal();currentSlide(1)" />
           </div>
           <div class="col-6 filterDiv illustration">
             <img id="modalImg" src="assets/images/portraits_1.jpg" alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
@@ -132,6 +133,50 @@
 </div>
 
 
+
+<!-- The Modal/Lightbox -->
+<div id="myModal_carousel" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content" style="height:auto">
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_1.jpg" alt="Famous Views - Take a Walk Through the Pier Pg1" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_2.jpg" alt="Famous Views - Take a Walk Through the Pier Pg2" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_3.jpg" alt="Famous Views - Take a Walk Through the Pier Pg3" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_4.jpg" alt="Famous Views - Take a Walk Through the Pier Pg4" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_5.jpg" alt="Famous Views - Take a Walk Through the Pier Pg5" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_6.jpg" alt="Famous Views - Take a Walk Through the Pier Pg6" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_7.jpg" alt="Famous Views - Take a Walk Through the Pier Pg7" style="width:100%">
+    </div>
+
+    <div class="imgSlides">
+      <img src="assets/images/famousViews_8.jpg" alt="Famous Views - Take a Walk Through the Pier Pg8" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
 
 
 
