@@ -1,3 +1,5 @@
+$logo-color: #691F2B;
+
 body {
   font-family: "Montserrat", sans-serif !important;
 }
@@ -10,10 +12,11 @@ body {
 
 #backBtn {
   font-size: 0.8em;
-}
-#backBtn:hover {
-  transform: scale(1.1);
+
+  &:hover {
+    transform: scale(1.1);
   cursor: pointer;
+  }
 }
 
 .sidenav {
@@ -27,25 +30,28 @@ body {
   overflow-x: hidden;
   padding-top: 20px;
   color: white;
-}
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 1em;
-  color: white;
-  display: block;
-}
-.sidenav a:hover {
-  text-decoration: none;
-  color: white;
+
+  a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
 
-.sidenav_section {
+.sidenav_section{
   margin-top: 10px;
   margin-bottom: 25px;
-}
-.sidenav_section p {
-  padding: 6px 8px 6px 16px;
+
+  p {
+    padding: 6px 8px 6px 16px;
+  }
 }
 
 /* Style the buttons */
@@ -58,28 +64,27 @@ body {
   cursor: pointer;
   font-size: 1em;
   margin-bottom: 2px;
-}
-.btn:hover {
-  background-color: #691F2B;
+
+  &:hover {
+    background-color: $logo-color;
+  }
 }
 
 .btn.active {
-  background-color: #691F2B;
+  background-color: $logo-color;
   color: white;
 }
 
 .main {
-  margin-left: 160px;
-  /* Same as the width of the sidenav */
-  font-size: 28px;
-  /* Increased text to enable scrolling */
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
   /* padding: 0px 10px; */
-}
-.main img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* border: solid red 1px; */
+  img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* border: solid red 1px; */
+  }
 }
 
 .filterDiv {
@@ -96,16 +101,18 @@ body {
   display: block;
 }
 
+
 /* Style the Image Used to Trigger the Modal */
 #modalImg {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   position: relative;
-}
-#modalImg:hover {
-  opacity: 0.7;
-  transform: scale(1.1);
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
 }
 
 /* The Modal (background) */
@@ -117,10 +124,8 @@ body {
   padding-top: 10px;
   left: 0;
   top: 0;
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/ opacity */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (Image) */
@@ -143,21 +148,19 @@ body {
   padding: 10px 0;
   height: 150px;
 } */
+
 /* Add Animation - Zoom in the Modal */
-.modal-content,
+.modal-content, 
 #caption {
   animation-name: zoom;
   animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+  from {transform:scale(0)}
+  to {transform:scale(1)}
 }
+
 /* The Close Button */
 span.close {
   position: absolute;
@@ -168,11 +171,13 @@ span.close {
   font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
-}
-span.close:hover, span.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 /* Hide the slides by default */
@@ -196,11 +201,10 @@ span.close:hover, span.close:focus {
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
-}
-.prev:hover,
-.next:hover {
-  /* On hover, add a black background color with a little bit see-through */
-  background-color: rgba(0, 0, 0, 0.8);
+
+  &:hover {/* On hover, add a black background color with a little bit see-through */
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 /* Position the "next button" to the right */
@@ -209,19 +213,20 @@ span.close:hover, span.close:focus {
   border-radius: 3px 0 0 3px;
 }
 
+
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
 }
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
+
+    a {
+      font-size: 18px;
+    }
   }
 }
-
-/*# sourceMappingURL=index.css.map */
