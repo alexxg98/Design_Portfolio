@@ -2,7 +2,10 @@ body {
   font-family: "Montserrat", sans-serif !important;
 }
 
-#logo {
+#logo_link {
+  text-align: center;
+}
+#logo_link img {
   width: 40%;
   height: auto;
   margin-bottom: 20px;
@@ -46,6 +49,8 @@ body {
 }
 .sidenav_section p {
   padding: 6px 8px 6px 16px;
+  color: white;
+  margin-bottom: 10px;
 }
 
 /* Style the buttons */
@@ -97,13 +102,13 @@ body {
 }
 
 /* Style the Image Used to Trigger the Modal */
-#modalImg {
+.modalImg {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   position: relative;
 }
-#modalImg:hover {
+.modalImg:hover {
   opacity: 0.7;
   transform: scale(1.1);
 }
@@ -129,7 +134,10 @@ body {
   display: block;
   width: auto !important;
   max-width: 55vw;
-  height: 97vh;
+  max-height: 97vh;
+}
+.modal-content img {
+  width: 100%;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
