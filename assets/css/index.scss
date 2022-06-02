@@ -11,8 +11,7 @@ body {
     width: 40%;
     height: auto;
     margin-bottom: 20px;
-  }
-  
+  } 
 }
 
 #backBtn {
@@ -24,7 +23,7 @@ body {
   }
 }
 
-.sidenav {
+nav {
   height: 100%;
   width: 160px;
   position: fixed;
@@ -48,49 +47,53 @@ body {
       color: white;
     }
   }
-}
 
-.sidenav_section{
-  margin-top: 10px;
-  margin-bottom: 25px;
+  section {
+    margin-top: 10px;
+    margin-bottom: 25px;
 
-  p {
-    padding: 6px 8px 6px 16px;
-    color: white; 
-    margin-bottom: 10px;
+    p {
+      padding: 6px 8px 6px 16px;
+      color: white; 
+      margin-bottom: 10px;
+    }
+  }
+
+  menu {
+    padding-inline-start: 0;
+
+    p {padding-left: 16px;}
+    
+    button {
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      padding: 12px 16px;
+      color: white !important;
+      background-color: inherit;
+      cursor: pointer;
+      font-size: 1em;
+      margin-bottom: 2px;
+  
+      &:hover {
+        background-color: $logo-color;
+      }
+  
+      &.active {
+        background-color: $logo-color;
+        color: white;
+      }
+    }
   }
 }
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  color: white !important;
-  background-color: inherit;
-  cursor: pointer;
-  font-size: 1em;
-  margin-bottom: 2px;
-
-  &:hover {
-    background-color: $logo-color;
-  }
-}
-
-.btn.active {
-  background-color: $logo-color;
-  color: white;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
+main {
+  margin: 10px 0px 0px 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  /* padding: 0px 10px; */
-  img{
+  img {
     display: block;
     width: 100%;
     height: 100%;
-    /* border: solid red 1px; */
   }
 }
 
@@ -143,22 +146,14 @@ body {
   max-width: 55vw;
   max-height: 97vh;
 
+  figure {
+    margin-block-end: 0;
+  }
+
   img {
     width: 100%;
   }
 }
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-/* #caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-} */
 
 /* Add Animation - Zoom in the Modal */
 .modal-content, 
@@ -173,7 +168,7 @@ body {
 }
 
 /* The Close Button */
-span.close {
+button.close {
   position: absolute;
   top: 15px;
   right: 35px;
@@ -196,7 +191,6 @@ span.close {
   display: none;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -205,23 +199,23 @@ span.close {
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 3px 3px;
+  border-width: 0;
   user-select: none;
   -webkit-user-select: none;
 
   &:hover {/* On hover, add a black background color with a little bit see-through */
     background-color: rgba(0, 0, 0, 0.8);
+    color: white;
   }
 }
 
 /* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
 
@@ -233,7 +227,7 @@ span.close {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {
+  nav {
     padding-top: 15px;
 
     a {
