@@ -80,10 +80,13 @@ nav menu button.active {
 }
 
 main {
-  margin: 10px 0px 0px 160px;
-  /* Same as the width of the sidenav */
   font-size: 28px;
   /* Increased text to enable scrolling */
+}
+main.container-fluid {
+  margin: 10px 0px 0px 160px;
+  /* Same as the width of the sidenav */
+  width: calc(100% - 160px);
 }
 main img {
   display: block;
@@ -142,6 +145,7 @@ main img {
 }
 .modal-content figure {
   margin-block-end: 0;
+  margin: auto;
 }
 .modal-content img {
   width: 100%;
@@ -176,11 +180,6 @@ button.close:hover, button.close:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
-}
-
-/* Hide the slides by default */
-.mySlides {
-  display: none;
 }
 
 .prev,

@@ -39,8 +39,7 @@
     </menu>
   </nav>
 
-  <main>
-    <div class="container-fluid">
+  <main class="container-fluid">
       <div class="row no-gutters">
         <!-- Column 1 -->
         <div class="col-lg-6">
@@ -66,21 +65,21 @@
           <figure class="row no-gutters">
             <img class="col-6 filterDiv illustration modalImg"
               src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1"
-              alt="Famous Views - Take a Walk Through the Pier" onclick="openFamViews();currentSlide(1)" />
+              alt="Famous Views - Take a Walk Through the Pier" onclick="openCarousel('famViews')" />
             <img class="col-6 filterDiv illustration modalImg"
               src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1"
-              alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
+              alt="Malala Yousafzai Portrait" onclick="openCarousel('yousafzaiPortrait')" />
           </figure>
-          <div class="row no-gutters">
+          <!-- <div class="row no-gutters">
             <figure class="col-6 filterDiv illustration">
-              <img class="modalImg" src="https://www.dropbox.com/s/1sjwnj6t3iasyp9/Yousafzai_Portrait2.jpg?raw=1"
-                alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
+              <img class="modalImg" src=""
+                alt="" onclick="onClick(this)" />
             </figure>
             <figure class="col-6 filterDiv illustration">
-              <img class="modalImg" src="https://www.dropbox.com/s/9yfi7pztdsmey80/Yousafzai_Portrait3.jpg?raw=1"
-                alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
+              <img class="modalImg" src=""
+                alt="" onclick="onClick(this)" />
             </figure>
-          </div>
+          </div> -->
         </div> <!-- End of Column 1 -->
 
         <!-- Column 2 -->
@@ -119,13 +118,12 @@
           </div>
         </div> <!-- End of Column 2 -->
       </div><!--End of grid -->
-    </div><!--End of container -->
   </main><!--End of main body -->
 
   <!-- Display img when clicked -->
   <figure id="viewImg" class="modal">
     <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
-    <img class="modal-content" id="displayImg">
+    <img class="modal-content" id="displayImg"/>
   </figure>
 
 
@@ -135,44 +133,70 @@
     <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
     <div class="modal-content">
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Title Page">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/z6cqy2nximma2s9/FamousViews_P1.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg1">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/kppxn4o2gl9d58z/FamousViews_P2.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg2">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/pydac0t30kp1uip/FamousViews_P3.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg3">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/v44d8rba2muecla/FamousViews_P4.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg4">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/g4aph8zx7xt24zr/FamousViews_P5.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg5">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/xdwno1lemv0lxdr/FamousViews_P6.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg6">
       </figure>
 
-      <figure class="imgSlides">
+      <figure class="imgSlides famViews_img">
         <img src="https://www.dropbox.com/s/vek51nex91n05z2/FamousViews_P7.jpg?raw=1"
           alt="Famous Views - Take a Walk Through the Pier Pg7">
+      </figure>
+
+      <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;</button>
+      <button type="button" class="next" onclick="plusSlides(1)">&#10095;</button>
+
+    </div>
+  </div>
+
+  <!-- The Modal/Lightbox: Famous Views-->
+  <div id="yousafzaiPortrait_carousel" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+
+      <figure class="imgSlides yousafzaiPortrait_img">
+        <img src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1"
+          alt="Malala Yousafzai Portrait #1">
+      </figure>
+
+      <figure class="imgSlides yousafzaiPortrait_img">
+        <img src="https://www.dropbox.com/s/1sjwnj6t3iasyp9/Yousafzai_Portrait2.jpg?raw=1"
+          alt="Malala Yousafzai Portrait #2">
+      </figure>
+
+      <figure class="imgSlides yousafzaiPortrait_img">
+        <img src="https://www.dropbox.com/s/9yfi7pztdsmey80/Yousafzai_Portrait3.jpg?raw=1"
+          alt="Malala Yousafzai Portrait #3">
       </figure>
 
       <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;</button>
