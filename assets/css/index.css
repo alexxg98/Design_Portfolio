@@ -10,6 +10,7 @@ button {
 
 #logo_link {
   text-align: center;
+  margin-top: 10px;
 }
 #logo_link img {
   width: 40%;
@@ -51,11 +52,6 @@ nav a:hover {
 nav section {
   margin-top: 10px;
   margin-bottom: 25px;
-}
-nav section p {
-  padding: 6px 8px 6px 16px;
-  color: white;
-  margin-bottom: 10px;
 }
 nav menu {
   padding-inline-start: 0;
@@ -122,50 +118,25 @@ main img {
 
 /* The Modal (background) */
 .modal {
-  display: none;
-  position: fixed;
-  overflow-y: auto;
-  z-index: 1;
-  padding-top: 10px;
-  left: 0;
-  top: 0;
+  max-height: 100vh;
   background-color: black;
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9);
   /* Black w/ opacity */
 }
-
-/* Modal Content (Image) */
-.modal-content {
+.modal .modal-content {
   margin: auto;
-  display: block;
+  padding: 1%;
   width: auto !important;
   max-width: 55vw;
-  max-height: 97vh;
+  height: 100%;
+  background: transparent;
 }
-.modal-content figure {
-  margin-block-end: 0;
-  margin: auto;
-}
-.modal-content img {
-  width: 100%;
+.modal .modal-content .imgSlides {
+  height: 100%;
+  object-fit: contain;
 }
 
-/* Add Animation - Zoom in the Modal */
-.modal-content,
-#caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 /* The Close Button */
 button.close {
   position: absolute;
@@ -182,17 +153,24 @@ button.close:hover, button.close:focus {
   cursor: pointer;
 }
 
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
 .prev,
 .next {
-  cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
-  margin-top: -50px;
+  padding: 0 16px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
   color: #691F2B;
+  background-color: rgba(105, 31, 43, 0.1);
   transition: 0.6s ease;
   border-radius: 3px 3px;
   border-width: 0;
@@ -205,10 +183,10 @@ button.close:hover, button.close:focus {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
+.prev small,
+.next small {
+  display: block;
+  font-size: small;
 }
 
 /* 100% Image Width on Smaller Screens */
