@@ -1,189 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Alexandria's Portfolio </title>
-<link href="assets/css/index.css" type="text/css" rel="stylesheet">
-<!-- Bootstrap and JavaScript -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <title> Alexandria's Portfolio </title>
+  <link href="assets/css/index.css" type="text/css" rel="stylesheet">
+  <!-- Bootstrap and JavaScript -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></script>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
-
-<div class="sidenav">
-  <div class="sidenav_section">
-    <a id="backBtn" onclick="goBack()"> &lt;&lt; Go Back</a>
-  </div>
-
-  <div>
+  <nav>
+    <section>
+      <a id="backBtn" onclick="goBack()">&lt;&lt; Go Back</a>
       <a href="#" id="logo_link">
         <img src="assets/images/logo_transp.png" alt="Logo">
       </a>
-  </div>
+      <a href="index.html">Home</a>
+      <a href="#contact">Contact</a>
+    </section>
 
-  <div class="sidenav_section">
-    <a href="index.html">Home</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <menu id="filterMenu">
+      <p>Filter By:</p>
+      <button type="button" class="filterBtn active" onclick="filterSelection('all')">Show all</button>
+      <button type="button" class="filterBtn" onclick="filterSelection('typography')">Typography</button>
+      <button type="button" class="filterBtn" onclick="filterSelection('illustration')">Illustration</button>
+    </menu>
+  </nav>
 
-  <div class="sidenav_section">
-    <p>Filter By:</p>
-
-    <div id="myBtnContainer">
-      <button class="btn active" onclick="filterSelection('all')">Show all</button>
-      <button class="btn" onclick="filterSelection('typography')">Typography</button>
-      <button class="btn" onclick="filterSelection('illustration')">Illustration</button>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="main">
-
-  <div class="container-fluid">
+  <main class="container-fluid">
     <div class="row no-gutters">
       <!-- Column 1 -->
       <div class="col-lg-6">
-        <div class="row no-gutters">
-          <div class="col-12 filterDiv typography">
-            <img class="modalImg" src="https://www.dropbox.com/s/7m9c6r7co85m9fi/ConcretePoem1.jpg?raw=1" alt="Concrete Poem 1" onclick="onClick(this)" />
-            <span class="overlay"> Concrete Poem | Dec 2018 </span>
-          </div>
+        <figure class="row no-gutters">
+          <img class="col-12 filterDiv typography modalImg" src="https://www.dropbox.com/s/7m9c6r7co85m9fi/ConcretePoem1.jpg?raw=1" alt="Concrete Poem 1" onclick="onClick(this)" />
+          <span class="material-symbols-outlined">filter_none</span>
+          <!-- <span class="overlay"> Concrete Poem | Dec 2018 </span> -->
+        </figure>
+        <figure class="row no-gutters">
+          <img class="col-6 filterDiv typography modalImg" src="https://www.dropbox.com/s/zvftpd3er8d2yiu/VoterReg_Front.jpg?raw=1" alt="voterReg"
+            onclick="onClick(this)" />
+          <img class="col-6 filterDiv typography modalImg" src="https://www.dropbox.com/s/gou2xlpw3ixxf7q/VoterReg_Back.jpg?raw=1" alt="voterReg"
+            onclick="onClick(this)" />
+        </figure>
+        <figure class="row no-gutters">
+          <img class="col-12 filterDiv illustration modalImg" src="https://www.dropbox.com/s/02ylcxe3971o3cy/moviePosterTransformation.jpg?raw=1" alt="Movie Poster Transformation" onclick="onClick(this)" />
+        </figure>
+        <div class="row no-gutters"> <!-- Need for hover icon -->
+          <figure class="col-6 filterDiv illustration">
+            <img class="modalImg" src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier" onclick="openCarousel('famViews')" />
+            <span class="material-symbols-outlined">filter_none</span>
+          </figure>
+          <figure class="col-6 filterDiv illustration">
+            <img class="modalImg" src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1" alt="Malala Yousafzai Portrait" onclick="openCarousel('yousafzaiPortrait')" />
+            <span class="material-symbols-outlined">filter_none</span>
+        </figure>
         </div>
-        <div class="row no-gutters">
-          <div class="col-6 filterDiv typography">
-            <img class="modalImg" src="https://www.dropbox.com/s/zvftpd3er8d2yiu/VoterReg_Front.jpg?raw=1" alt="voterReg" onclick="onClick(this)" />
-          </div>
-          <div class="col-6 filterDiv typography">
-            <img class="modalImg" src="https://www.dropbox.com/s/gou2xlpw3ixxf7q/VoterReg_Back.jpg?raw=1" alt="voterReg" onclick="onClick(this)" />
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-12 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/02ylcxe3971o3cy/moviePosterTransformation.jpg?raw=1" alt="Movie Poster Transformation" onclick="onClick(this)" />
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-6 filterDiv illustration">
-            <img class="modalImg" src="assets/images/famousViews_1.jpg" alt="Famous Views - Take a Walk Through the Pier" onclick="openModal();currentSlide(1)" />
-          </div>
-          <div class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1" alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/1sjwnj6t3iasyp9/Yousafzai_Portrait2.jpg?raw=1" alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
-          </div>
-          <div class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/9yfi7pztdsmey80/Yousafzai_Portrait3.jpg?raw=1" alt="Malala Yousafzai Portrait" onclick="onClick(this)" />
-          </div>
-        </div>
+        
+        <!-- <div class="row no-gutters">
+            <figure class="col-6 filterDiv illustration">
+              <img class="modalImg" src=""
+                alt="" onclick="onClick(this)" />
+            </figure>
+            <figure class="col-6 filterDiv illustration">
+              <img class="modalImg" src=""
+                alt="" onclick="onClick(this)" />
+            </figure>
+          </div> -->
       </div> <!-- End of Column 1 -->
 
       <!-- Column 2 -->
       <div class="col-lg-6">
-        <div class="row no-gutters">
-          <div class="col-6 filterDiv typography">
-            <img class="modalImg" src="https://www.dropbox.com/s/3bjdohs7ftrvoof/ConcretePoem2.jpg?raw=1" alt="Concrete Poem 2" onclick="onClick(this)" />
-          </div>
-          <div class="col-6 filterDiv typography">
-            <img class="modalImg" src="https://www.dropbox.com/s/9jmz799sqf2fwdc/ConcretePoem3.jpg?raw=1" alt="Concrete Poem 3" onclick="onClick(this)" />
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-12 filterDiv typography">
-            <img class="modalImg" src="https://www.dropbox.com/s/jqvke2yhym32yup/Alria_Type.jpg?raw=1" alt="Alria" onclick="onClick(this)" />
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/uor0wv60q3piu6l/playingCardsDesign2.jpg?raw=1" alt="Asymmetric Playing Card Design" onclick="onClick(this)" />
-          </div>
-          <div class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/ruyktvhfp46af6s/playingCardsDesign1.jpg?raw=1" alt="Symmetric Playing Card Design" onclick="onClick(this)" />
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-12 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/52kq6otpgymzkmx/surrealPortrait.jpg?raw=1" alt="Surreal Portrait" onclick="onClick(this)" />
-          </div>
-        </div>
+        <figure class="row no-gutters">
+          <img class="col-6 filterDiv typography modalImg" src="https://www.dropbox.com/s/3bjdohs7ftrvoof/ConcretePoem2.jpg?raw=1" alt="Concrete Poem 2" onclick="onClick(this)" />
+          <img class="col-6 filterDiv typography modalImg" src="https://www.dropbox.com/s/9jmz799sqf2fwdc/ConcretePoem3.jpg?raw=1" alt="Concrete Poem 3" onclick="onClick(this)" />
+        </figure>
+        <figure class="row no-gutters">
+          <img class="col-12 filterDiv typography modalImg" src="https://www.dropbox.com/s/jqvke2yhym32yup/Alria_Type.jpg?raw=1" alt="Alria" onclick="onClick(this)" />
+        </figure>
+        <figure class="row no-gutters">
+          <img class="col-6 filterDiv illustration modalImg" src="https://www.dropbox.com/s/uor0wv60q3piu6l/playingCardsDesign2.jpg?raw=1" alt="Asymmetric Playing Card Design" onclick="onClick(this)" />
+          <img class="col-6 filterDiv illustration modalImg" src="https://www.dropbox.com/s/ruyktvhfp46af6s/playingCardsDesign1.jpg?raw=1" alt="Symmetric Playing Card Design" onclick="onClick(this)" />
+        </figure>
+        <figure class="row no-gutters">
+          <img class="col-12 filterDiv illustration modalImg" src="https://www.dropbox.com/s/52kq6otpgymzkmx/surrealPortrait.jpg?raw=1" alt="Surreal Portrait" onclick="onClick(this)" />
+        </figure>
       </div> <!-- End of Column 2 -->
     </div> <!--End of grid -->
-  </div> <!--End of container -->
-
-</div> <!--End of main body -->
-
-<!--Modal-->
-<div id="myModal" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
-</div>
+  </main>
 
 
+  <!-- Display img when clicked -->
+  <figure id="viewImg" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <img class="modal-content" id="displayImg" />
+  </figure>
 
-<!-- The Modal/Lightbox -->
-<div id="myModal_carousel" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
+  <!-- The Modal/Lightboxes-->
+  <div id="famViews_carousel" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <figure class="modal-content">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Title Page">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/z6cqy2nximma2s9/FamousViews_P1.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg1">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/kppxn4o2gl9d58z/FamousViews_P2.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg2">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/pydac0t30kp1uip/FamousViews_P3.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg3">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/v44d8rba2muecla/FamousViews_P4.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg4">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/g4aph8zx7xt24zr/FamousViews_P5.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg5">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/xdwno1lemv0lxdr/FamousViews_P6.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg6">
+      <img class="imgSlides famViews_img" src="https://www.dropbox.com/s/vek51nex91n05z2/FamousViews_P7.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg7">
 
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Title Page">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/z6cqy2nximma2s9/FamousViews_P1.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg1">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/kppxn4o2gl9d58z/FamousViews_P2.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg2">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/pydac0t30kp1uip/FamousViews_P3.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg3">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/v44d8rba2muecla/FamousViews_P4.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg4">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/g4aph8zx7xt24zr/FamousViews_P5.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg5">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/xdwno1lemv0lxdr/FamousViews_P6.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg6">
-    </div>
-
-    <div class="imgSlides">
-      <img src="https://www.dropbox.com/s/vek51nex91n05z2/FamousViews_P7.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier Pg7">
-    </div>
-
-    <!-- Next/previous controls -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+      <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;<small>Prev</small></button>
+      <button type="button" class="next" onclick="plusSlides(1)">&#10095;<small>Next</small></button>
+    </figure>
   </div>
-</div>
+
+  <div id="yousafzaiPortrait_carousel" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <figure class="modal-content">
+      <img class="imgSlides yousafzaiPortrait_img" src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1" alt="Malala Yousafzai Portrait #1">
+      <img class="imgSlides yousafzaiPortrait_img" src="https://www.dropbox.com/s/1sjwnj6t3iasyp9/Yousafzai_Portrait2.jpg?raw=1" alt="Malala Yousafzai Portrait #2">
+      <img class="imgSlides yousafzaiPortrait_img" src="https://www.dropbox.com/s/9yfi7pztdsmey80/Yousafzai_Portrait3.jpg?raw=1" alt="Malala Yousafzai Portrait #3">
+
+      <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;<small>Prev</small></button>
+      <button type="button" class="next" onclick="plusSlides(1)">&#10095;<small>Next</small></button>
+    </figure>
+  </div>
 
 
-
-<script src="assets/js/index.js"> </script>
+  <script src="assets/js/index.js"> </script>
+  <script src="assets/js/modal.js"> </script>
 </body>
+
 </html>

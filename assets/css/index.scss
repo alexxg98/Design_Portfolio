@@ -1,18 +1,25 @@
 $logo-color: #691F2B;
+$nav-width: 160px;
 
 body {
   font-family: "Montserrat", sans-serif !important;
 }
 
+button { 
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
 #logo_link {
   text-align: center;
+  margin-top: 10px;
 
   img {
     width: 40%;
     height: auto;
     margin-bottom: 20px;
-  }
-  
+  } 
 }
 
 #backBtn {
@@ -24,7 +31,7 @@ body {
   }
 }
 
-.sidenav {
+nav {
   height: 100%;
   width: 160px;
   position: fixed;
@@ -48,55 +55,54 @@ body {
       color: white;
     }
   }
-}
 
-.sidenav_section{
-  margin-top: 10px;
-  margin-bottom: 25px;
+  section {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
 
-  p {
-    padding: 6px 8px 6px 16px;
-    color: white; 
-    margin-bottom: 10px;
+  menu {
+    padding-inline-start: 0;
+
+    p {padding-left: 16px;}
+    
+    button {
+      border-radius: 5px;
+      outline: none;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-bottom: 2px;
+  
+      &:hover {
+        background-color: $logo-color;
+      }
+  
+      &.active {
+        background-color: $logo-color;
+        color: white;
+      }
+    }
   }
 }
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  color: white !important;
-  background-color: inherit;
-  cursor: pointer;
-  font-size: 1em;
-  margin-bottom: 2px;
+main {
+  // font-size: 28px; /* Increased text to enable scrolling */
 
-  &:hover {
-    background-color: $logo-color;
+  &.container-fluid {
+    margin: 10px 0px 0px $nav-width;
+    width: calc(100% - $nav-width);
   }
-}
-
-.btn.active {
-  background-color: $logo-color;
-  color: white;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  /* padding: 0px 10px; */
-  img{
+  
+  img {
     display: block;
     width: 100%;
-    height: 100%;
-    /* border: solid red 1px; */
+    // height: 100%;
   }
 }
 
 .filterDiv {
   float: left;
-  color: white;
   width: 100px;
   line-height: 100px;
   text-align: center;
@@ -104,9 +110,7 @@ body {
   overflow: hidden;
 }
 
-.show {
-  display: block;
-}
+.show { display: block; }
 
 
 /* Style the Image Used to Trigger the Modal */
@@ -114,70 +118,58 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  position: relative;
+  // position: relative;
 
   &:hover {
     opacity: 0.7;
     transform: scale(1.1);
+
+    &:first-of-type + .material-symbols-outlined { opacity: 1; }
   }
 }
+
+figure { position: relative; }
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' -25,
+    'opsz' 48;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  direction: rtl !important;
+  top: 10px;
+  right: 10px;
+}
+
 
 /* The Modal (background) */
 .modal {
-  display: none;
-  position: fixed;
-  overflow-y: auto;
-  z-index: 1;
-  padding-top: 10px;
-  left: 0;
-  top: 0;
+  max-height: 100vh;
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
 
-/* Modal Content (Image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: auto !important;
-  max-width: 55vw;
-  max-height: 97vh;
+  .modal-content {
+    margin: auto;
+    padding: 1%;
+    width: auto !important;
+    max-width: 55vw;
+    height: 100%;
+    background: transparent;
 
-  img {
-    width: 100%;
+    .imgSlides {
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-/* #caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-} */
-
-/* Add Animation - Zoom in the Modal */
-.modal-content, 
-#caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
-
 /* The Close Button */
-span.close {
+button.close {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: white;
   opacity: 1;
   font-size: 30px;
   font-weight: bold;
@@ -191,37 +183,33 @@ span.close {
   }
 }
 
-/* Hide the slides by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
+.prev { left: 0; }
+.next { right: 0; }
 .prev,
 .next {
-  cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
+  padding: 0 16px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
+  color: $logo-color;
+  background-color: rgba(105, 31, 43, 0.1);
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 3px 3px;
+  border-width: 0;
   user-select: none;
   -webkit-user-select: none;
 
   &:hover {/* On hover, add a black background color with a little bit see-through */
     background-color: rgba(0, 0, 0, 0.8);
+    color: white;
   }
-}
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  small {
+    display: block;
+    font-size: small;
+  }
 }
 
 
@@ -233,7 +221,7 @@ span.close {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {
+  nav {
     padding-top: 15px;
 
     a {
