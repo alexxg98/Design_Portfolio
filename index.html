@@ -31,6 +31,7 @@
       <button type="button" class="filterBtn active" onclick="filterSelection('all')">Show all</button>
       <button type="button" class="filterBtn" onclick="filterSelection('typography')">Typography</button>
       <button type="button" class="filterBtn" onclick="filterSelection('illustration')">Illustration</button>
+      <button type="button" class="filterBtn" onclick="filterSelection('graphicDes')">Graphic Design</button>
     </menu>
   </nav>
 
@@ -39,7 +40,7 @@
       <!-- Column 1 -->
       <div class="col-lg-6">
         <figure class="row no-gutters">
-          <img class="col-12 filterDiv typography modalImg" src="https://www.dropbox.com/s/7m9c6r7co85m9fi/ConcretePoem1.jpg?raw=1" alt="Concrete Poem 1" onclick="onClick(this)" />
+          <img class="col-12 filterDiv typography modalImg" src="https://www.dropbox.com/s/7m9c6r7co85m9fi/ConcretePoem1.jpg?raw=1" alt="Concrete Poem 1" onclick="openCarousel('conPoem')" />
           <span class="material-symbols-outlined">filter_none</span>
           <!-- <span class="overlay"> Concrete Poem | Dec 2018 </span> -->
         </figure>
@@ -54,33 +55,22 @@
         </figure>
         <div class="row no-gutters"> <!-- Need for hover icon -->
           <figure class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier" onclick="openCarousel('famViews')" />
+            <img class="modalImg" src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1" alt="Malala Yousafzai Portrait" onclick="openCarousel('yousafzaiPortrait')" />
             <span class="material-symbols-outlined">filter_none</span>
           </figure>
           <figure class="col-6 filterDiv illustration">
-            <img class="modalImg" src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1" alt="Malala Yousafzai Portrait" onclick="openCarousel('yousafzaiPortrait')" />
+            <img class="modalImg" src="https://www.dropbox.com/s/7sih9u3c97w4pb7/FamousViews_Title.jpg?raw=1" alt="Famous Views - Take a Walk Through the Pier" onclick="openCarousel('famViews')" />
             <span class="material-symbols-outlined">filter_none</span>
-        </figure>
+          </figure>
         </div>
-        
-        <!-- <div class="row no-gutters">
-            <figure class="col-6 filterDiv illustration">
-              <img class="modalImg" src=""
-                alt="" onclick="onClick(this)" />
-            </figure>
-            <figure class="col-6 filterDiv illustration">
-              <img class="modalImg" src=""
-                alt="" onclick="onClick(this)" />
-            </figure>
-          </div> -->
+        <figure class="row no-gutters">
+          <img class="col-12 filterDiv graphicDes modalImg" src="https://www.dropbox.com/s/vi5919pfcdo1s59/urbanFarming_icons.svg?raw=1" alt="Urban Farming Icons" onclick="openCarousel('urbanFarms')" />
+          <span class="material-symbols-outlined">filter_none</span>
+        </figure>
       </div> <!-- End of Column 1 -->
 
       <!-- Column 2 -->
       <div class="col-lg-6">
-        <figure class="row no-gutters">
-          <img class="col-6 filterDiv typography modalImg" src="https://www.dropbox.com/s/3bjdohs7ftrvoof/ConcretePoem2.jpg?raw=1" alt="Concrete Poem 2" onclick="onClick(this)" />
-          <img class="col-6 filterDiv typography modalImg" src="https://www.dropbox.com/s/9jmz799sqf2fwdc/ConcretePoem3.jpg?raw=1" alt="Concrete Poem 3" onclick="onClick(this)" />
-        </figure>
         <figure class="row no-gutters">
           <img class="col-12 filterDiv typography modalImg" src="https://www.dropbox.com/s/jqvke2yhym32yup/Alria_Type.jpg?raw=1" alt="Alria" onclick="onClick(this)" />
         </figure>
@@ -90,6 +80,13 @@
         </figure>
         <figure class="row no-gutters">
           <img class="col-12 filterDiv illustration modalImg" src="https://www.dropbox.com/s/52kq6otpgymzkmx/surrealPortrait.jpg?raw=1" alt="Surreal Portrait" onclick="onClick(this)" />
+        </figure>
+        <figure class="row no-gutters">
+          <img class="col-6 filterDiv graphicDes modalImg" src="https://www.dropbox.com/s/87j8c0u1q7dtpuo/ShapeToSymbol.gif?raw=1" alt="Shape to Symbol Gif" onclick="onClick(this)" />
+          <div class="col-6 filterDiv illustration">
+            <img class="modalImg" src="https://www.dropbox.com/s/f14cwg34i8cbnfg/CreativeBrain_CS.jpg?raw=1" alt="Creative Brain" onclick="openCarousel('creativeBrain')" />
+            <span class="material-symbols-outlined">filter_none</span>
+          </div>
         </figure>
       </div> <!-- End of Column 2 -->
     </div> <!--End of grid -->
@@ -126,6 +123,45 @@
       <img class="imgSlides yousafzaiPortrait_img" src="https://www.dropbox.com/s/das7ogl4onlsb1y/Yousafzai_Portrait1.jpg?raw=1" alt="Malala Yousafzai Portrait #1">
       <img class="imgSlides yousafzaiPortrait_img" src="https://www.dropbox.com/s/1sjwnj6t3iasyp9/Yousafzai_Portrait2.jpg?raw=1" alt="Malala Yousafzai Portrait #2">
       <img class="imgSlides yousafzaiPortrait_img" src="https://www.dropbox.com/s/9yfi7pztdsmey80/Yousafzai_Portrait3.jpg?raw=1" alt="Malala Yousafzai Portrait #3">
+
+      <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;<small>Prev</small></button>
+      <button type="button" class="next" onclick="plusSlides(1)">&#10095;<small>Next</small></button>
+    </figure>
+  </div>
+
+  <div id="conPoem_carousel" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <figure class="modal-content">
+      <img class="imgSlides conPoem_img" src="https://www.dropbox.com/s/7m9c6r7co85m9fi/ConcretePoem1.jpg?raw=1" alt="Concrete Poem #1">
+      <img class="imgSlides conPoem_img" src="https://www.dropbox.com/s/3bjdohs7ftrvoof/ConcretePoem2.jpg?raw=1" alt="Concrete Poem #2">
+      <img class="imgSlides conPoem_img" src="https://www.dropbox.com/s/9jmz799sqf2fwdc/ConcretePoem3.jpg?raw=1" alt="Concrete Poem #3">
+
+      <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;<small>Prev</small></button>
+      <button type="button" class="next" onclick="plusSlides(1)">&#10095;<small>Next</small></button>
+    </figure>
+  </div>
+
+  <div id="creativeBrain_carousel" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <figure class="modal-content">
+      <img class="imgSlides creativeBrain_img" src="https://www.dropbox.com/s/f14cwg34i8cbnfg/CreativeBrain_CS.jpg?raw=1" alt="Creative Brain: CS">
+      <img class="imgSlides creativeBrain_img" src="https://www.dropbox.com/s/w3iyri8vjundbsp/CreativeBrain_Type.jpg?raw=1" alt="Creative Brain: Type">
+      <img class="imgSlides creativeBrain_img" src="https://www.dropbox.com/s/t6hiqy2iu9l3538/CreativeBrain_Astro.jpg?raw=1" alt="Creative Brain: Astro">
+
+      <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;<small>Prev</small></button>
+      <button type="button" class="next" onclick="plusSlides(1)">&#10095;<small>Next</small></button>
+    </figure>
+  </div>
+
+  <div id="urbanFarmIcons_carousel" class="modal">
+    <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
+    <figure class="modal-content">
+      <img class="imgSlides urbanFarmIcons_img" src="https://www.dropbox.com/s/vi5919pfcdo1s59/urbanFarming_icons.svg?raw=1" alt="Urban Farming Icons (Black&White)">
+      <img class="imgSlides urbanFarmIcons_img" src="https://www.dropbox.com/s/u58602fg9f8sxko/urbanFarming_iconsColor.svg?raw=1" alt="Urban Farming Icon (Color)">
+      <img class="imgSlides urbanFarmIcons_img" src="https://www.dropbox.com/s/75zztsijqx2yrho/urbanFarming_Icon1.svg?raw=1" alt="Urban Farming Icon 1">
+      <img class="imgSlides urbanFarmIcons_img" src="https://www.dropbox.com/s/w6zy7mlrwve8onf/urbanFarming_Icon2.svg?raw=1" alt="Urban Farming Icon 2">
+      <img class="imgSlides urbanFarmIcons_img" src="https://www.dropbox.com/s/hh47xinfdvwqrl4/urbanFarming_Icon3.svg?raw=1" alt="Urban Farming Icon 3">
+      <img class="imgSlides urbanFarmIcons_img" src="https://www.dropbox.com/s/8fwlekglyrcd522/urbanFarming_Icon4.svg?raw=1" alt="Urban Farming Icon 4">
 
       <button type="button" class="prev" onclick="plusSlides(-1)">&#10094;<small>Prev</small></button>
       <button type="button" class="next" onclick="plusSlides(1)">&#10095;<small>Next</small></button>
