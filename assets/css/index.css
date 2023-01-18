@@ -107,11 +107,11 @@ main img {
   opacity: 0.7;
   transform: scale(1.1);
 }
-.modalImg:hover:first-of-type + .material-symbols-outlined {
+.modalImg:hover + .material-symbols-outlined {
   opacity: 1;
 }
 
-figure {
+.iconCntr {
   position: relative;
 }
 
