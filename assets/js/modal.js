@@ -19,6 +19,7 @@ var yousafzai_carousel = document.getElementById("yousafzaiPortrait_carousel");
 var conPoem_carousel = document.getElementById("conPoem_carousel");
 var creativeBrain_carousel = document.getElementById("creativeBrain_carousel");
 var urbanFarmIcons_carousel = document.getElementById("urbanFarmIcons_carousel");
+var letterformA_carousel = document.getElementById("letterformA_carousel");
 
 function openCarousel(selection) {
   // currentSlide(1);
@@ -43,6 +44,10 @@ function openCarousel(selection) {
       urbanFarmIcons_carousel.style.display = "block";
       proj_selection = 'urbanFarmIcons_img';
       break;
+    case 'letterformA':
+      letterformA_carousel.style.display = "block";
+      proj_selection = 'letterformA_img';
+      break
     default:
       break;
   }
@@ -76,6 +81,7 @@ function closeModal() {
   conPoem_carousel.style.display = "none";
   creativeBrain_carousel.style.display = "none";
   urbanFarmIcons_carousel.style.display = "none";
+  letterformA_carousel.style.display = "none";
 }
 
 // CLose the Modal when user clicks outside image
@@ -96,6 +102,9 @@ window.onclick = function(event) {
     closeModal()
   }
   if (event.target == urbanFarmIcons_carousel) {
+    closeModal()
+  }
+  if (event.target == letterformA_carousel) {
     closeModal()
   }
 }
