@@ -14,43 +14,12 @@ function onClick(element) {
 // Modal Carousels
 var slideIndex = 1;
 var proj_selection = "";
-var famViews_carousel = document.getElementById("famViews_carousel");
-var yousafzai_carousel = document.getElementById("yousafzaiPortrait_carousel");
-var conPoem_carousel = document.getElementById("conPoem_carousel");
-var creativeBrain_carousel = document.getElementById("creativeBrain_carousel");
-var urbanFarmIcons_carousel = document.getElementById("urbanFarmIcons_carousel");
-var letterformA_carousel = document.getElementById("letterformA_carousel");
+var carousel_element;
 
 function openCarousel(selection) {
-  // currentSlide(1);
-  switch (selection) {
-    case 'famViews':
-      famViews_carousel.style.display = "block";
-      proj_selection = "famViews_img";
-      break;
-    case 'yousafzaiPortrait':
-      yousafzai_carousel.style.display = "block";
-      proj_selection = "yousafzaiPortrait_img";
-      break;
-    case 'conPoem':
-      conPoem_carousel.style.display = "block";
-      proj_selection = "conPoem_img";
-      break;
-    case 'creativeBrain':
-      creativeBrain_carousel.style.display = "block";
-      proj_selection = 'creativeBrain_img';
-      break;
-    case 'urbanFarms':
-      urbanFarmIcons_carousel.style.display = "block";
-      proj_selection = 'urbanFarmIcons_img';
-      break;
-    case 'letterformA':
-      letterformA_carousel.style.display = "block";
-      proj_selection = 'letterformA_img';
-      break
-    default:
-      break;
-  }
+  carousel_element = document.getElementById(selection + '_carousel');
+  carousel_element.style.display = "block";
+  proj_selection = selection + '_img';
   showSlides(1);
 }
 
@@ -76,12 +45,7 @@ function closeModal() {
   proj_selection = "";
   slideIndex = 1;
   singleImgModal.style.display = "none";
-  famViews_carousel.style.display = "none";
-  yousafzai_carousel.style.display = "none";
-  conPoem_carousel.style.display = "none";
-  creativeBrain_carousel.style.display = "none";
-  urbanFarmIcons_carousel.style.display = "none";
-  letterformA_carousel.style.display = "none";
+  carousel_element.style.display = "none";
 }
 
 // CLose the Modal when user clicks outside image
@@ -89,22 +53,7 @@ window.onclick = function(event) {
   if (event.target == singleImgModal) {
     closeModal();
   }
-  if (event.target == famViews_carousel) {
-    closeModal()
-  }
-  if (event.target == yousafzai_carousel) {
-    closeModal()
-  }
-  if (event.target == conPoem_carousel) {
-    closeModal()
-  }
-  if (event.target == creativeBrain_carousel) {
-    closeModal()
-  }
-  if (event.target == urbanFarmIcons_carousel) {
-    closeModal()
-  }
-  if (event.target == letterformA_carousel) {
+  if (event.target == carousel_element) {
     closeModal()
   }
 }
