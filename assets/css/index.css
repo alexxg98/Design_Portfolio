@@ -1,3 +1,8 @@
+img {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif !important;
 }
@@ -5,90 +10,48 @@ body {
 button {
   background-color: transparent;
   border: none;
-  color: white;
 }
 
-#logo_link {
-  text-align: center;
-  margin-top: 10px;
-}
-#logo_link img {
-  width: 40%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-#backBtn {
-  font-size: 0.8em;
-}
-#backBtn:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-nav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
+section {
+  position: sticky;
   z-index: 1;
   top: 0;
-  left: 0;
   background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-  color: white;
 }
-nav a {
-  padding: 6px 8px 6px 16px;
+section nav {
+  display: grid;
+  grid: auto/50% 25% 25%;
+  align-items: center;
+  padding: 10px;
+}
+section nav #logo_link img {
+  height: 48px;
+  width: auto;
+}
+section nav a {
   text-decoration: none;
-  font-size: 1em;
-  color: white;
-  display: block;
-}
-nav a:hover {
-  text-decoration: none;
   color: white;
 }
-nav section {
-  margin-top: 10px;
-  margin-bottom: 25px;
+section nav a:not(:first-child) {
+  text-align: right;
 }
-nav menu {
-  padding-inline-start: 0;
+section #filterMenu {
+  background-color: white;
+  margin-block-start: 0;
+  padding: 10px 0;
+  text-align: center;
 }
-nav menu p {
-  padding-left: 16px;
+section #filterMenu button {
+  margin-bottom: 15px;
+  padding: 5px 10px;
 }
-nav menu button {
-  border-radius: 5px;
-  outline: none;
-  padding: 12px 16px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-bottom: 2px;
-}
-nav menu button:hover {
-  background-color: #691F2B;
-}
-nav menu button.active {
+section #filterMenu button.active {
   background-color: #691F2B;
   color: white;
-}
-
-main.container-fluid {
-  margin: 10px 0px 0px 160px;
-  width: calc(100% - 160px);
-}
-main img {
-  display: block;
-  width: 100%;
+  border-radius: 25px;
 }
 
 .filterDiv {
-  float: left;
-  width: 100px;
-  line-height: 100px;
-  text-align: center;
   display: none;
   overflow: hidden;
 }
@@ -97,29 +60,12 @@ main img {
   display: block;
 }
 
-/* Style the Image Used to Trigger the Modal */
-.modalImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.modalImg:hover {
-  opacity: 0.7;
-  transform: scale(1.1);
-}
-.modalImg:hover + .material-symbols-outlined {
-  opacity: 1;
-}
-
 .iconCntr {
   position: relative;
 }
-
-.material-symbols-outlined {
+.iconCntr .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" -25, "opsz" 48;
   position: absolute;
-  opacity: 0;
-  z-index: 1;
   direction: rtl !important;
   top: 10px;
   right: 10px;
@@ -127,39 +73,34 @@ main img {
 
 /* The Modal (background) */
 .modal {
-  max-height: 100vh;
+  padding: 1%;
   background-color: black;
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9);
   /* Black w/ opacity */
 }
 .modal .modal-content {
-  margin: auto;
-  padding: 1%;
-  width: auto !important;
-  max-width: 55vw;
-  height: 100%;
   background: transparent;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .modal .modal-content .imgSlides {
-  height: 100%;
   object-fit: contain;
 }
 
 /* The Close Button */
 button.close {
   position: absolute;
+  opacity: 1;
   top: 15px;
   right: 35px;
-  opacity: 1;
+  color: white;
   font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
-}
-button.close:hover, button.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .prev {
@@ -173,43 +114,107 @@ button.close:hover, button.close:focus {
 .prev,
 .next {
   position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 0 16px;
-  font-weight: bold;
-  font-size: 24px;
-  color: #691F2B;
-  background-color: rgba(105, 31, 43, 0.1);
-  transition: 0.6s ease;
-  border-radius: 3px 3px;
-  border-width: 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.prev:hover,
-.next:hover {
-  /* On hover, add a black background color with a little bit see-through */
-  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  white-space: pre;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  bottom: -40px;
+  padding: 10px;
+  background-color: #691F2B;
   color: white;
+  font-size: 12px;
+  transition: 0.6s ease;
+  -webkit-user-select: none;
+  user-select: none;
 }
-.prev small,
-.next small {
-  display: block;
-  font-size: small;
+.prev span,
+.next span {
+  font-weight: bold;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
+@media screen and (min-width: 1366px) {
+  section {
+    position: fixed;
+    overflow-x: hidden;
+    width: 160px;
+    height: 100%;
+  }
+  section nav {
+    grid: auto/auto;
+  }
+  section nav #logo_link img {
+    width: 40%;
+    height: auto;
+    padding: 20px 0;
+  }
+  section nav a:first-child {
+    text-align: center;
+  }
+  section nav a:not(:first-child) {
+    text-align: left;
+    padding: 5px 10px;
+  }
+  section #filterMenu {
+    background-color: inherit;
+    color: white;
+    margin-top: 16px;
+    text-align: left;
+  }
+  section #filterMenu p {
+    padding-left: 16px;
+  }
+  section #filterMenu button {
+    color: white;
+  }
+  section #filterMenu button.active {
+    border-radius: 0 25px 25px 0;
+  }
+
+  main.container-fluid {
+    margin: 10px 0px 0px 160px;
+    width: calc(100% - 160px);
   }
 }
-@media screen and (max-height: 450px) {
-  nav {
-    padding-top: 15px;
+@media (orientation: landscape) {
+  .imgSlides {
+    max-height: calc(100vh - 95px);
   }
-  nav a {
-    font-size: 18px;
+}
+@media (hover: hover) {
+  nav a:hover {
+    text-decoration: none;
+    color: #691F2B;
+  }
+
+  #filterMenu button:hover {
+    background-color: #691F2B;
+    border-radius: 0 25px 25px 0;
+  }
+
+  .material-symbols-outlined {
+    opacity: 0;
+  }
+
+  .modalImg {
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  .modalImg:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  .modalImg:hover + .material-symbols-outlined {
+    opacity: 1;
+  }
+
+  button.close:hover {
+    color: #bbb;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
 

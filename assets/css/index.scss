@@ -1,231 +1,242 @@
 $logo-color: #691F2B;
 $nav-width: 160px;
 
-body {
-  font-family: "Montserrat", sans-serif !important;
+@mixin centerImg {
+    // position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-button { 
-  background-color: transparent;
-  border: none;
-  color: white;
-}
-
-#logo_link {
-  text-align: center;
-  margin-top: 10px;
-
-  img {
-    width: 40%;
-    height: auto;
-    margin-bottom: 20px;
-  } 
-}
-
-#backBtn {
-  font-size: 0.8em;
-
-  &:hover {
-    transform: scale(1.1);
-  cursor: pointer;
-  }
-}
-
-nav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-  color: white;
-
-  a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 1em;
-    color: white;
-    display: block;
-
-    &:hover {
-      text-decoration: none;
-      color: white;
-    }
-  }
-
-  section {
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
-
-  menu {
-    padding-inline-start: 0;
-
-    p {padding-left: 16px;}
-    
-    button {
-      border-radius: 5px;
-      outline: none;
-      padding: 12px 16px;
-      cursor: pointer;
-      font-size: 1em;
-      margin-bottom: 2px;
-  
-      &:hover {
-        background-color: $logo-color;
-      }
-  
-      &.active {
-        background-color: $logo-color;
-        color: white;
-      }
-    }
-  }
-}
-
-main {
-  // font-size: 28px; /* Increased text to enable scrolling */
-
-  &.container-fluid {
-    margin: 10px 0px 0px $nav-width;
-    width: calc(100% - $nav-width);
-  }
-  
-  img {
-    display: block;
+img {
     width: 100%;
-    // height: 100%;
-  }
+    height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif !important;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+section {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: #111;
+
+    nav {
+        display: grid;
+        grid: auto / 50% 25% 25%;
+        align-items: center;
+        padding: 10px;
+
+        #logo_link img {
+            height: 48px;
+            width: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+            &:not(:first-child) {
+                text-align: right;
+            }
+        }
+    }
+
+    #filterMenu {
+        background-color: white;
+        margin-block-start: 0;
+        padding: 10px 0;
+        text-align: center;
+
+        button {
+            margin-bottom: 15px;
+            padding: 5px 10px;
+
+            &.active {
+                background-color: $logo-color;
+                color: white;
+                border-radius: 25px;
+            }
+        }
+    }
 }
 
 .filterDiv {
-  float: left;
-  width: 100px;
-  line-height: 100px;
-  text-align: center;
-  display: none;
-  overflow: hidden;
+    display: none;
+    overflow: hidden;
+    // float: left;
+    // width: 100px;
+    // line-height: 100px;
 }
 
 .show { display: block; }
 
+.iconCntr {
+    position: relative;
 
-/* Style the Image Used to Trigger the Modal */
-.modalImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  // position: relative;
-
-  &:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
-
-    & + .material-symbols-outlined { opacity: 1; }
-  }
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' -25,
+            'opsz' 48;
+        position: absolute;
+        direction: rtl !important;
+        top: 10px;
+        right: 10px;
+    }
 }
-
-.iconCntr { position: relative; }
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 500,
-    'GRAD' -25,
-    'opsz' 48;
-  position: absolute;
-  opacity: 0;
-  z-index: 1;
-  direction: rtl !important;
-  top: 10px;
-  right: 10px;
-}
-
 
 /* The Modal (background) */
 .modal {
-  max-height: 100vh;
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-
-  .modal-content {
-    margin: auto;
     padding: 1%;
-    width: auto !important;
-    max-width: 55vw;
-    height: 100%;
-    background: transparent;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 
-    .imgSlides {
-      height: 100%;
-      object-fit: contain;
+    .modal-content {
+        background: transparent;
+        width: -moz-fit-content;
+        width: fit-content;
+        @include centerImg;
+
+        .imgSlides {
+            object-fit: contain;
+        }
     }
-  }
 }
 
 /* The Close Button */
 button.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  opacity: 1;
-  font-size: 30px;
-  font-weight: bold;
-  transition: 0.3s;
-
-  &:hover,
-  &:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
+    position: absolute;
+    opacity: 1;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .prev { left: 0; }
 .next { right: 0; }
 .prev,
 .next {
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 0 16px;
-  font-weight: bold;
-  font-size: 24px;
-  color: $logo-color;
-  background-color: rgba(105, 31, 43, 0.1);
-  transition: 0.6s ease;
-  border-radius: 3px 3px;
-  border-width: 0;
-  user-select: none;
-  -webkit-user-select: none;
-
-  &:hover {/* On hover, add a black background color with a little bit see-through */
-    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    display: flex;
+    white-space: pre;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    bottom: -40px;
+    padding: 10px;
+    background-color: $logo-color;
     color: white;
-  }
+    font-size: 12px;
+    transition: 0.6s ease;
+    -webkit-user-select: none;
+    user-select: none;
 
-  small {
-    display: block;
-    font-size: small;
-  }
-}
-
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-@media screen and (max-height: 450px) {
-  nav {
-    padding-top: 15px;
-
-    a {
-      font-size: 18px;
+    span {
+        // font-size: 16px;
+        font-weight: bold;
     }
-  }
+}
+
+// Large Screens and Desktops
+@media screen and (min-width: 1366px) {
+    section {
+        position: fixed;
+        overflow-x: hidden;
+        width: $nav-width;
+        height: 100%;
+
+        nav {
+            grid: auto / auto;
+            #logo_link img{
+                width: 40%;
+                height: auto;
+                padding: 20px 0;
+            }
+
+            a:first-child {
+                text-align: center;
+            }
+            a:not(:first-child) {
+                text-align: left;
+                padding: 5px 10px;
+            }
+
+        }
+
+        #filterMenu {
+            background-color: inherit;
+            color: white;
+            margin-top: 16px;
+            text-align: left;
+
+            p { padding-left: 16px; }
+
+            button {
+                color: white;
+
+                &.active {
+                    border-radius: 0 25px 25px 0;
+                }
+            }
+        }
+    }
+
+    main.container-fluid {
+        margin: 10px 0px 0px $nav-width;
+        width: calc(100% - $nav-width);
+    }
+}
+
+@media (orientation: landscape) {
+    .imgSlides {
+        max-height: calc(100vh - 38px*2.5);;
+    }
+}
+
+@media (hover: hover) {
+    nav a:hover {
+        text-decoration: none;
+        color: $logo-color;
+    }
+
+    #filterMenu button:hover {
+        background-color: $logo-color;
+        border-radius: 0 25px 25px 0;
+    }
+
+    .material-symbols-outlined {
+        opacity: 0;
+    }
+    .modalImg {
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 5px;
+      
+        &:hover {
+          opacity: 0.7;
+          transform: scale(1.1);
+      
+          & + .material-symbols-outlined { opacity: 1; }
+        }
+    }
+
+    button.close:hover {
+        color: #bbb;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
