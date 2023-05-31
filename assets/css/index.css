@@ -17,15 +17,16 @@ section {
   z-index: 1;
   top: 0;
   background-color: #111;
+  font-size: 14px;
 }
 section nav {
   display: grid;
-  grid: auto/50% 25% 25%;
+  grid: auto/50% 50%;
   align-items: center;
-  padding: 10px;
+  padding: 10px 15px;
 }
 section nav #logo_link img {
-  height: 48px;
+  height: 40px;
   width: auto;
 }
 section nav a {
@@ -38,8 +39,11 @@ section nav a:not(:first-child) {
 section #filterMenu {
   background-color: white;
   margin-block-start: 0;
-  padding: 10px 0;
+  padding: 10px 0 0;
   text-align: center;
+}
+section #filterMenu p {
+  display: none;
 }
 section #filterMenu button {
   margin-bottom: 15px;
@@ -81,8 +85,6 @@ section #filterMenu button.active {
 }
 .modal .modal-content {
   background: transparent;
-  width: -moz-fit-content;
-  width: fit-content;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -90,14 +92,18 @@ section #filterMenu button.active {
 .modal .modal-content .imgSlides {
   object-fit: contain;
 }
+.modal #displayImg {
+  height: auto;
+}
 
 /* The Close Button */
 button.close {
   position: absolute;
   opacity: 1;
+  z-index: 1;
   top: 15px;
   right: 35px;
-  color: white;
+  color: #691F2B;
   font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
@@ -133,7 +139,7 @@ button.close {
   font-weight: bold;
 }
 
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1366px), (orientation: landscape) {
   section {
     position: fixed;
     overflow-x: hidden;
@@ -175,10 +181,13 @@ button.close {
     margin: 10px 0px 0px 160px;
     width: calc(100% - 160px);
   }
-}
-@media (orientation: landscape) {
+
   .imgSlides {
     max-height: calc(100vh - 95px);
+  }
+
+  #displayImg {
+    width: auto !important;
   }
 }
 @media (hover: hover) {
