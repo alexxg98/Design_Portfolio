@@ -73,7 +73,7 @@ section {
     }
 }
 
-.filterDiv {
+figure.filterDiv {
     display: none;
     overflow: hidden;
     // float: left;
@@ -81,7 +81,7 @@ section {
     // line-height: 100px;
 }
 
-.show { display: block; }
+figure.show { display: block; }
 
 .iconCntr {
     position: relative;
@@ -227,7 +227,7 @@ button.close {
     }
 
     .material-symbols-outlined {
-        opacity: 0;
+        visibility: hidden;
     }
     .modalImg {
         cursor: pointer;
@@ -238,7 +238,7 @@ button.close {
           opacity: 0.7;
           transform: scale(1.1);
       
-          & + .material-symbols-outlined { opacity: 1; }
+          & + .material-symbols-outlined { visibility: visible; }
         }
     }
 

@@ -55,12 +55,12 @@ section #filterMenu button.active {
   border-radius: 25px;
 }
 
-.filterDiv {
+figure.filterDiv {
   display: none;
   overflow: hidden;
 }
 
-.show {
+figure.show {
   display: block;
 }
 
@@ -202,7 +202,7 @@ button.close {
   }
 
   .material-symbols-outlined {
-    opacity: 0;
+    visibility: hidden;
   }
 
   .modalImg {
@@ -215,7 +215,7 @@ button.close {
     transform: scale(1.1);
   }
   .modalImg:hover + .material-symbols-outlined {
-    opacity: 1;
+    visibility: visible;
   }
 
   button.close:hover {
