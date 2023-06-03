@@ -1,4 +1,7 @@
 $logo-color: #691F2B;
+$hover-darker: #4f1721;
+$secondary-color: #c9485d;
+$inverse-color: #edc1c8;
 $nav-width: 160px;
 
 @mixin centerImg {
@@ -107,6 +110,7 @@ figure.show { display: block; }
 
     .modal-content {
         background: transparent;
+        width: fit-content;
         @include centerImg;
 
         .imgSlides {
@@ -227,7 +231,7 @@ button.close {
 @media (hover: hover) {
     nav a:hover {
         text-decoration: none;
-        color: $logo-color;
+        color: $inverse-color;
     }
 
     #filterMenu button:hover {
@@ -256,6 +260,6 @@ button.close {
     }
 
     .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: $hover-darker;
     }
 }
