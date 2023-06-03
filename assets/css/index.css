@@ -93,7 +93,9 @@ figure.show {
   object-fit: contain;
 }
 .modal #displayImg {
+  max-width: 99vw;
   height: auto;
+  max-height: 99vh;
 }
 
 /* The Close Button */
@@ -101,8 +103,7 @@ button.close {
   position: absolute;
   opacity: 1;
   z-index: 1;
-  top: 15px;
-  right: 35px;
+  right: 10px;
   color: #691F2B;
   font-size: 30px;
   font-weight: bold;
@@ -139,6 +140,11 @@ button.close {
   font-weight: bold;
 }
 
+@media screen and (min-width: 760px) {
+  button.close {
+    font-size: 50px;
+  }
+}
 @media screen and (min-width: 1366px), (orientation: landscape) {
   section {
     position: fixed;
