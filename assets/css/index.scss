@@ -72,6 +72,10 @@ section {
                 color: white;
                 border-radius: 25px;
             }
+
+            &:hover { //Just in-case
+                border-bottom: 1px solid $hover-darker;
+            }
         }
     }
 }
@@ -210,6 +214,11 @@ button.close {
                 &.active {
                     border-radius: 0 25px 25px 0;
                 }
+
+                &:hover {
+                    background-color: $logo-color;
+                    border-radius: 0 25px 25px 0;
+                }
             }
         }
     }
@@ -232,11 +241,6 @@ button.close {
     nav a:hover {
         text-decoration: none;
         color: $inverse-color;
-    }
-
-    #filterMenu button:hover {
-        background-color: $logo-color;
-        border-radius: 0 25px 25px 0;
     }
 
     .material-symbols-outlined {
