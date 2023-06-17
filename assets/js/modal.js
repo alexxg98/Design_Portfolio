@@ -14,25 +14,13 @@ function onClick(element) {
 // Modal Carousels
 var slideIndex = 1;
 var proj_selection = "";
-var famViews_carousel = document.getElementById("famViews_carousel");
-var yousafzai_carousel = document.getElementById("yousafzaiPortrait_carousel");
+var carousel_element;
 
 function openCarousel(selection) {
-  // currentSlide(1);
-  switch (selection) {
-    case 'famViews':
-      famViews_carousel.style.display = "block";
-      proj_selection = "famViews_img";
-      showSlides(1);
-      break;
-    case 'yousafzaiPortrait':
-      yousafzai_carousel.style.display = "block";
-      proj_selection = "yousafzaiPortrait_img";
-      showSlides(1);
-      break;
-    default:
-      break;
-  }
+  carousel_element = document.getElementById(selection + '_carousel');
+  carousel_element.style.display = "block";
+  proj_selection = selection + '_img';
+  showSlides(1);
 }
 
 // Next/previous controls
@@ -57,8 +45,7 @@ function closeModal() {
   proj_selection = "";
   slideIndex = 1;
   singleImgModal.style.display = "none";
-  famViews_carousel.style.display = "none";
-  yousafzai_carousel.style.display = "none";
+  carousel_element.style.display = "none";
 }
 
 // CLose the Modal when user clicks outside image
@@ -66,10 +53,7 @@ window.onclick = function(event) {
   if (event.target == singleImgModal) {
     closeModal();
   }
-  if (event.target == famViews_carousel) {
-    closeModal()
-  }
-  if (event.target == yousafzai_carousel) {
+  if (event.target == carousel_element) {
     closeModal()
   }
 }
